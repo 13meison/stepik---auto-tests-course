@@ -4,10 +4,18 @@ import time
 try:
     browser = webdriver.Chrome()
     browser.get("http://suninjuly.github.io/registration2.html")
-    elements = browser.find_elements_by_css_selector("input.form-control")
-    for element in elements:
-        element.send_keys("Мой ответ")
-    time.sleep(5)
+    element1 = browser.find_element_by_css_selector(
+        "input.first[placeholder='Input your first name']")
+    element1.send_keys("Мой ответ1")
+    element2 = browser.find_element_by_css_selector(
+        "input.second[placeholder='Input your last name']")
+    element2.send_keys("Мой ответ2")
+    element3 = browser.find_element_by_css_selector(
+        "input.third[placeholder='Input your email']")
+    element3.send_keys("Мой ответ3")
+    # for element in elements:
+    #     element.send_keys("Мой ответ")
+    # time.sleep(5)
     button = browser.find_element_by_class_name("btn.btn-default")
     button.click()
 
